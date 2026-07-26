@@ -1,278 +1,276 @@
-<div align="center">
+<p align="center">
 
 # SGR-IA
-### AI-Powered Financial Risk Management Platform
+### Plataforma Inteligente para la Gestión de Riesgo Financiero
+
+<img src="(<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/d0e95821-51b8-4561-994f-21a6d6d10bb8" />)" alt="Banner del Proyecto"/>
+
+</p>
+
+<p align="center">
 
 <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white">
 <img src="https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white">
 <img src="https://img.shields.io/badge/AWS-Bedrock-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white">
 <img src="https://img.shields.io/badge/AWS-S3-569A31?style=for-the-badge&logo=amazonaws&logoColor=white">
-<img src="https://img.shields.io/badge/GARCH-1,1-0A66C2?style=for-the-badge">
-<img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge">
+<img src="https://img.shields.io/badge/GARCH(1,1)-Modelo%20Econom%C3%A9trico-00599C?style=for-the-badge">
+<img src="https://img.shields.io/badge/Licencia-MIT-success?style=for-the-badge">
+
+</p>
+
+<p align="center">
+
+**Inteligencia Artificial • Econometría • Ciencia de Datos • Gestión de Riesgo Financiero**
+
+</p>
 
 ---
 
-### Quantitative Risk Analytics • Artificial Intelligence • Volatility Forecasting • Financial Decision Support
+# Índice
 
-*A next-generation financial risk management platform that combines econometric volatility modeling with Generative Artificial Intelligence to support institutional investment decisions.*
-
-</div>
-
----
-
-# Overview
-
-SGR-IA (Sistema de Gestión de Riesgo con Inteligencia Artificial) is an enterprise-oriented financial risk management platform developed during a Hackathon to demonstrate how modern Artificial Intelligence can enhance quantitative finance.
-
-Instead of relying exclusively on statistical indicators, the platform combines classical econometric techniques with Large Language Models to transform complex numerical outputs into executive-level financial reports understandable by portfolio managers, analysts and decision makers.
-
-The project integrates volatility forecasting, market regime detection, Value at Risk estimation, Conditional Value at Risk, walk-forward backtesting and AI-generated institutional risk memorandums into a single interactive dashboard.
-
-Unlike conventional dashboards that only display metrics, SGR-IA explains what those metrics mean and how they affect investment decisions.
+- [Descripción del Proyecto](#-descripción-del-proyecto)
+- [Problema que Resuelve](#-problema-que-resuelve)
+- [Nuestra Solución](#-nuestra-solución)
+- [Demostración](#-demostración)
+- [Aplicación en Producción](#-aplicación-en-producción)
+- [Características Principales](#-características-principales)
+- [Arquitectura General](#-arquitectura-general)
+- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
 
 ---
 
-# Problem Statement
+# Descripción del Proyecto
 
-Financial markets have become increasingly volatile due to macroeconomic uncertainty, geopolitical conflicts and rapidly changing monetary policies.
+**SGR-IA (Sistema de Gestión de Riesgo con Inteligencia Artificial)** es una plataforma desarrollada para apoyar la toma de decisiones financieras mediante técnicas de econometría, análisis cuantitativo e Inteligencia Artificial Generativa.
 
-Traditional portfolio monitoring systems generally provide numerical indicators but leave the interpretation entirely to analysts.
+La aplicación integra modelos de volatilidad **GARCH(1,1)** con servicios de **Amazon Bedrock**, permitiendo transformar resultados estadísticos complejos en reportes ejecutivos comprensibles para analistas financieros, inversionistas y responsables de la gestión del riesgo.
 
-This creates three important challenges:
-
-- Delayed decision making during periods of market stress.
-- Difficulty interpreting volatility forecasts.
-- Lack of automated institutional reporting.
-
-SGR-IA addresses these issues by combining quantitative modeling with Generative AI, enabling financial professionals to obtain technical indicators together with natural-language explanations and actionable insights.
+A diferencia de un dashboard tradicional, SGR-IA no solo calcula indicadores financieros, sino que también interpreta automáticamente los resultados utilizando modelos de lenguaje, facilitando la comprensión del comportamiento del mercado y apoyando la toma de decisiones estratégicas.
 
 ---
 
-# Solution
+# Problema que Resuelve
 
-The platform performs the complete quantitative risk analysis pipeline.
+Los mercados financieros presentan cambios constantes provocados por factores económicos, políticos y sociales que incrementan la incertidumbre y dificultan la gestión del riesgo.
 
-Market prices are collected automatically.
+Muchas herramientas existentes ofrecen únicamente indicadores numéricos, dejando completamente en manos del analista la interpretación de la información.
 
-↓
+Esto provoca problemas como:
 
-Logarithmic returns are calculated.
-
-↓
-
-A GARCH(1,1) volatility model with Student-t innovations is estimated using Maximum Likelihood Estimation.
-
-↓
-
-Conditional volatility is forecasted.
-
-↓
-
-Risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR) are calculated.
-
-↓
-
-A walk-forward backtesting engine evaluates strategy robustness without look-ahead bias.
-
-↓
-
-Amazon Bedrock (Claude) generates institutional-quality executive risk reports.
-
-↓
-
-All results are visualized through an interactive Streamlit dashboard.
+- Interpretación lenta de la volatilidad.
+- Mayor riesgo de decisiones incorrectas.
+- Dificultad para generar reportes ejecutivos.
+- Procesos manuales de análisis.
+- Baja automatización en la gestión del riesgo.
 
 ---
 
-# Main Features
+#  Nuestra Solución
 
-## Quantitative Analytics
+SGR-IA automatiza todo el flujo de análisis financiero mediante un proceso compuesto por varias etapas.
 
-- GARCH(1,1) volatility forecasting
-- Student-t innovation distribution
-- Maximum Likelihood Estimation (MLE)
-- Conditional volatility estimation
-- Long-term variance estimation
-- Persistence analysis (α + β)
-- Information criteria (AIC / BIC)
+```text
+Obtención de datos históricos
+            │
+            ▼
+Procesamiento y limpieza
+            │
+            ▼
+Cálculo de rendimientos
+            │
+            ▼
+Estimación del modelo GARCH(1,1)
+            │
+            ▼
+Pronóstico de volatilidad
+            │
+            ▼
+Cálculo de VaR y CVaR
+            │
+            ▼
+Backtesting Walk-Forward
+            │
+            ▼
+Generación automática de reportes con IA
+            │
+            ▼
+Visualización interactiva en Streamlit
+```
 
----
-
-## Risk Metrics
-
-- Historical Returns
-- Conditional Volatility
-- Value at Risk (95%, 97.5%, 99%)
-- Conditional Value at Risk
-- Drawdown Analysis
-- Market Regime Detection
-- Tail Risk Analysis
-
----
-
-## Backtesting Engine
-
-- Walk-forward validation
-- Expanding window methodology
-- No look-ahead bias
-- Dynamic exposure reduction
-- Buy & Hold comparison
-- Maximum Drawdown evaluation
-- Strategy performance metrics
+El resultado es una plataforma capaz de combinar modelos cuantitativos tradicionales con Inteligencia Artificial para ofrecer análisis más rápidos, comprensibles y útiles para la toma de decisiones.
 
 ---
 
-## Artificial Intelligence
+#  Demostración
 
-The project integrates Amazon Bedrock to automatically generate professional institutional reports describing:
+> Video demostrativo de la plataforma.
 
-- Current market conditions
-- Risk interpretation
-- Volatility regime
-- Portfolio recommendations
-- Executive summary
-- Technical explanation
-- Investment considerations
-
-This transforms raw statistical outputs into readable reports suitable for financial institutions.
+**▶ Ver demo aquí:** (**COLOCA AQUÍ EL ENLACE DEL VIDEO**)
 
 ---
 
-# System Architecture
+#  Aplicación en Producción
+
+Puedes probar la aplicación desplegada desde el siguiente enlace:
+
+** Aplicación Web:** (**COLOCA AQUÍ EL ENLACE DEL DESPLIEGUE**)
+
+---
+
+# Características Principales
+
+##  Análisis Cuantitativo
+
+- Modelo GARCH(1,1).
+- Distribución Student-t.
+- Estimación mediante Máxima Verosimilitud.
+- Pronóstico de volatilidad.
+- Persistencia del modelo.
+- Varianza de largo plazo.
+- Criterios AIC y BIC.
+
+---
+
+## Gestión de Riesgo
+
+La plataforma calcula automáticamente indicadores ampliamente utilizados en instituciones financieras.
+
+Entre ellos:
+
+- Value at Risk (VaR)
+- Conditional Value at Risk (CVaR)
+- Volatilidad Condicional
+- Rendimientos Históricos
+- Riesgo de Cola
+- Drawdown
+- Detección de Regímenes de Mercado
+
+---
+
+## Inteligencia Artificial
+
+El sistema integra **Amazon Bedrock** para generar reportes automáticos que incluyen:
+
+- Resumen ejecutivo.
+- Interpretación del mercado.
+- Análisis de volatilidad.
+- Evaluación del riesgo.
+- Recomendaciones estratégicas.
+- Conclusiones para la toma de decisiones.
+
+---
+
+#  Arquitectura General
 
 ```mermaid
 flowchart LR
 
 A[Yahoo Finance]
 
-A --> B[Market Data Ingestion]
+A --> B[Obtención de Datos]
 
-B --> C[Return Calculation]
+B --> C[Procesamiento]
 
-C --> D[GARCH Engine]
+C --> D[Modelo GARCH]
 
-D --> E[Conditional Volatility]
+D --> E[Pronóstico]
 
-E --> F[VaR / CVaR]
+E --> F[VaR y CVaR]
 
-D --> G[Backtesting Engine]
+D --> G[Backtesting]
 
-G --> H[Performance Metrics]
+F --> H[Dashboard Streamlit]
 
-F --> I[Streamlit Dashboard]
+G --> H
 
-H --> I
+H --> I[Amazon Bedrock]
 
-I --> J[Amazon Bedrock]
-
-J --> K[Executive Risk Memorandum]
+I --> J[Reporte Ejecutivo]
 ```
 
 ---
 
-# Technology Stack
+# Tecnologías Utilizadas
 
-| Layer | Technology |
-|---------|------------|
-| Programming Language | Python 3.10+ |
+| Categoría | Tecnología |
+|------------|------------|
+| Lenguaje | Python 3.10+ |
 | Dashboard | Streamlit |
-| Econometrics | arch |
-| Data Processing | Pandas |
-| Numerical Computing | NumPy |
-| Visualization | Plotly |
-| Statistics | SciPy |
-| AI Services | Amazon Bedrock |
-| Cloud Storage | Amazon S3 |
-| Deployment | Docker |
-| Version Control | Git & GitHub |
+| Econometría | ARCH |
+| Procesamiento | Pandas |
+| Cálculo Numérico | NumPy |
+| Estadística | SciPy |
+| Visualización | Plotly |
+| Inteligencia Artificial | Amazon Bedrock |
+| Almacenamiento | Amazon S3 |
+| Contenedores | Docker |
+| Control de Versiones | Git y GitHub |
 
 ---
-# Project Structure
+#  Estructura del Proyecto
 
-The project follows a modular architecture that separates quantitative modeling, data processing, visualization, cloud services and user interaction. This organization improves maintainability, scalability and future extensibility.
+El proyecto fue desarrollado siguiendo una arquitectura modular que facilita el mantenimiento, la escalabilidad y la incorporación de nuevas funcionalidades. Cada módulo tiene una responsabilidad específica, permitiendo separar la lógica de negocio, el procesamiento de datos, la visualización y la integración con servicios externos.
 
 ```text
 Proyecto-Hackaton/
 │
-├── app.py                    # Main Streamlit application
-├── requirements.txt          # Python dependencies
-├── Dockerfile                # Container configuration
-├── docker-compose.yml        # Multi-container deployment
-├── .env.example              # Environment variables template
+├── app.py                  # Punto de entrada de la aplicación
+├── requirements.txt        # Dependencias del proyecto
+├── Dockerfile              # Configuración para Docker
+├── README.md               # Documentación
 │
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── cache/
-│
-├── models/
-│   ├── garch.py
-│   ├── forecasting.py
-│   ├── risk_metrics.py
-│   └── backtesting.py
-│
-├── services/
-│   ├── bedrock.py
-│   ├── s3.py
-│   └── data_loader.py
-│
-├── utils/
-│   ├── helpers.py
-│   ├── plots.py
-│   └── metrics.py
-│
-├── assets/
-│   ├── images/
-│   └── icons/
-│
-├── notebooks/
-│
-├── docs/
-│
-└── README.md
+├── pages/                  # Páginas del dashboard
+├── components/             # Componentes reutilizables
+├── services/               # Servicios de negocio
+├── models/                 # Modelos econométricos
+├── utils/                  # Funciones auxiliares
+├── assets/                 # Imágenes e iconos
+├── data/                   # Datos utilizados
+└── config/                 # Configuraciones generales
 ```
 
 ---
 
-# Workflow
+# Flujo General del Sistema
 
-The platform follows an end-to-end quantitative finance pipeline.
+La plataforma sigue un flujo automatizado para analizar el comportamiento del mercado y generar recomendaciones.
 
 ```text
-Historical Market Data
-          │
-          ▼
-Data Cleaning & Validation
-          │
-          ▼
-Log Return Computation
-          │
-          ▼
-GARCH(1,1) Estimation
-          │
-          ▼
-Volatility Forecast
-          │
-          ├───────────────┐
-          ▼               ▼
-Value at Risk        Backtesting
-          │               │
-          └───────┬───────┘
-                  ▼
-Risk Dashboard
-                  │
-                  ▼
-Amazon Bedrock AI
-                  │
-                  ▼
-Executive Financial Report
+Datos Históricos
+        │
+        ▼
+Obtención de Información
+        │
+        ▼
+Preprocesamiento
+        │
+        ▼
+Modelo GARCH(1,1)
+        │
+        ▼
+Pronóstico de Volatilidad
+        │
+        ▼
+Cálculo de Riesgo (VaR y CVaR)
+        │
+        ▼
+Backtesting
+        │
+        ▼
+Dashboard Interactivo
+        │
+        ▼
+Amazon Bedrock
+        │
+        ▼
+Reporte Inteligente
 ```
 
 ---
 
-# Installation
+#  Instalación
 
-## Clone the repository
+## 1. Clonar el repositorio
 
 ```bash
 git clone https://github.com/Camxeroth/Proyecto-Hackaton.git
@@ -282,17 +280,9 @@ cd Proyecto-Hackaton
 
 ---
 
-## Create a virtual environment
+## 2. Crear un entorno virtual
 
-Linux / macOS
-
-```bash
-python -m venv venv
-
-source venv/bin/activate
-```
-
-Windows
+### Windows
 
 ```bash
 python -m venv venv
@@ -300,9 +290,17 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
+### Linux / macOS
+
+```bash
+python -m venv venv
+
+source venv/bin/activate
+```
+
 ---
 
-## Install dependencies
+## 3. Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
@@ -310,33 +308,35 @@ pip install -r requirements.txt
 
 ---
 
-# Environment Variables
+#  Variables de Entorno
 
-Create a `.env` file in the root directory.
+Antes de ejecutar la aplicación, crea un archivo llamado **`.env`** en la raíz del proyecto.
 
-Example:
+Ejemplo:
 
 ```env
-AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxxxx
-AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxx
+AWS_ACCESS_KEY_ID=TU_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY=TU_SECRET_KEY
 AWS_DEFAULT_REGION=us-east-1
 
 BEDROCK_MODEL=anthropic.claude
 
-S3_BUCKET=your_bucket_name
+S3_BUCKET=nombre-del-bucket
 ```
+
+> **Importante:** Nunca subas este archivo a GitHub. Agrega `.env` al archivo `.gitignore`.
 
 ---
 
-# Running the Project
+# Ejecución del Proyecto
 
-Launch the Streamlit application.
+Una vez instaladas todas las dependencias, inicia la aplicación con:
 
 ```bash
 streamlit run app.py
 ```
 
-The dashboard will be available at:
+La aplicación estará disponible en:
 
 ```
 http://localhost:8501
@@ -344,21 +344,21 @@ http://localhost:8501
 
 ---
 
-# Docker Deployment
+#  Despliegue con Docker
 
-Build the image.
+## Construir la imagen
 
 ```bash
 docker build -t sgr-ia .
 ```
 
-Run the container.
+## Ejecutar el contenedor
 
 ```bash
 docker run -p 8501:8501 sgr-ia
 ```
 
-Or simply execute:
+Si utilizas Docker Compose:
 
 ```bash
 docker-compose up
@@ -366,444 +366,449 @@ docker-compose up
 
 ---
 
-# Dashboard Modules
+#  Módulos de la Plataforma
 
-The application has been designed using independent analytical modules.
+La aplicación está organizada en diferentes módulos especializados.
 
-## Market Overview
+##  Panel Principal
 
-Provides a consolidated view of market behavior, allowing users to identify recent movements and overall asset performance.
-
----
-
-## Volatility Forecasting
-
-Implements a GARCH(1,1) model with Student-t innovations to estimate conditional volatility and forecast future market uncertainty.
-
-Main outputs include:
-
-- Conditional Volatility
-- Long-run Variance
-- Persistence
-- Forecast Horizon
-- Confidence Intervals
+Presenta un resumen del estado actual del mercado mediante gráficos interactivos e indicadores financieros.
 
 ---
 
-## Risk Analysis
+##  Pronóstico de Volatilidad
 
-Computes institutional risk indicators commonly used in quantitative finance.
+Implementa un modelo **GARCH(1,1)** para estimar la volatilidad condicional futura.
 
-Included metrics:
+Entre los resultados obtenidos se encuentran:
+
+- Volatilidad Condicional
+- Persistencia del Modelo
+- Varianza de Largo Plazo
+- Pronóstico de Volatilidad
+- Intervalos de Confianza
+
+---
+
+## Gestión de Riesgo
+
+Calcula automáticamente indicadores utilizados por instituciones financieras para medir el riesgo de una inversión.
+
+Incluye:
 
 - Value at Risk (VaR)
 - Conditional Value at Risk (CVaR)
-- Historical Volatility
-- Expected Shortfall
-- Tail Risk
+- Volatilidad Histórica
+- Riesgo de Cola
+- Drawdown
+- Rendimientos Acumulados
 
 ---
 
-## Backtesting
+##  Backtesting
 
-Evaluates investment strategies through a walk-forward validation framework.
+Evalúa el desempeño de estrategias de inversión utilizando validación **Walk-Forward**, evitando sesgos derivados del uso de información futura.
 
-Performance indicators include:
+Métricas calculadas:
 
-- Portfolio Return
-- Buy & Hold Benchmark
-- Maximum Drawdown
-- Annualized Return
-- Volatility
+- Rendimiento del Portafolio
+- Buy & Hold
+- Drawdown Máximo
+- Rendimiento Anualizado
+- Volatilidad
 - Sharpe Ratio
-- Hit Ratio
+- Comparación de Estrategias
 
 ---
 
-## AI Risk Assistant
+## Asistente Inteligente
 
-Amazon Bedrock generates professional financial analyses directly from the calculated metrics.
+Uno de los principales diferenciadores del proyecto es la integración con **Amazon Bedrock**, permitiendo generar automáticamente reportes financieros mediante Inteligencia Artificial.
 
-The generated reports typically include:
+Los informes incluyen:
 
-- Executive Summary
-- Market Overview
-- Risk Assessment
-- Portfolio Interpretation
-- Strategic Recommendations
-- Future Outlook
-
----
-
-# Performance Highlights
-
-The implemented methodology provides several advantages over traditional monitoring systems.
-
-| Feature | Benefit |
-|----------|----------|
-| GARCH Modeling | Captures volatility clustering |
-| Student-t Distribution | Better tail risk estimation |
-| Walk-forward Validation | Prevents look-ahead bias |
-| Amazon Bedrock | Institutional-quality reports |
-| Streamlit | Interactive visualization |
-| Modular Design | Easy maintenance and scalability |
-| Cloud Storage | Secure persistence through Amazon S3 |
+- Resumen Ejecutivo
+- Interpretación del Mercado
+- Análisis del Riesgo
+- Estado de la Volatilidad
+- Recomendaciones
+- Perspectivas del Mercado
 
 ---
 
-# Future Roadmap
+#  Capturas de Pantalla
 
-The platform has been designed with scalability in mind.
+Una buena práctica consiste en mostrar el funcionamiento del sistema mediante imágenes.
 
-Planned improvements include:
-
-- Multi-asset portfolio optimization
-- Monte Carlo simulations
-- Stress testing scenarios
-- Real-time market streaming
-- Options pricing models
-- Credit risk estimation
-- Reinforcement Learning strategies
-- Explainable AI (XAI)
-- Automatic anomaly detection
-- Kubernetes deployment
-- CI/CD pipelines
-- REST API for institutional integration
-
----
-
-# Screenshots
-
-Replace these placeholders with project images.
-
-```text
-assets/images/dashboard.png
-
-assets/images/forecast.png
-
-assets/images/backtesting.png
-
-assets/images/bedrock-report.png
-```
-
-Then embed them as follows:
+## Página Principal
 
 ```markdown
-## Dashboard
+<img width="1366" height="602" alt="image" src="https://github.com/user-attachments/assets/9b7e2690-a0c1-49bd-aa98-2b05f98c3408" />
 
-![Dashboard](assets/images/dashboard.png)
-
----
-
-## Volatility Forecast
-
-![Forecast](assets/images/forecast.png)
-
----
-
-## Backtesting
-
-![Backtesting](assets/images/backtesting.png)
-
----
-
-## AI Report
-
-![AI Report](assets/images/bedrock-report.png)
 ```
 
 ---
-# Mathematical Foundation
 
-The analytical engine is based on the Generalized Autoregressive Conditional Heteroskedasticity (GARCH) framework, one of the most widely adopted models in quantitative finance for modeling time-varying volatility.
+## Pronóstico de Volatilidad
 
-The implemented GARCH(1,1) model estimates conditional variance using historical innovations and previous conditional variances, enabling dynamic volatility forecasting under changing market conditions.
+```markdown
+<img width="1366" height="579" alt="image" src="https://github.com/user-attachments/assets/fb82cecb-e6fe-484b-849e-4e79a04c8ca1" />
 
-The project incorporates Maximum Likelihood Estimation (MLE) with Student-t innovations to improve robustness against heavy-tailed financial return distributions.
-
-Key concepts implemented include:
-
-- Volatility Clustering
-- Conditional Variance
-- Maximum Likelihood Estimation
-- Heavy-Tailed Distributions
-- Tail Risk Modeling
-- Forecast Persistence
-- Risk Forecasting
+```
 
 ---
 
-# Security
+## Análisis de cola
 
-Security considerations were incorporated throughout the application architecture.
+```markdown
+<img width="1366" height="597" alt="image" src="https://github.com/user-attachments/assets/b3273bce-985c-4d50-8d84-0eb12ba41bcb" />
 
-Implemented practices include:
-
-- Environment variables for sensitive credentials
-- AWS IAM authentication
-- Secure Amazon Bedrock integration
-- Amazon S3 cloud storage
-- Separation of business logic
-- Modular architecture
-- Input validation
-- Error handling
-- Reproducible environments
-- Containerized deployment
-
-Future improvements include:
-
-- OAuth2 authentication
-- JWT authorization
-- Role-Based Access Control (RBAC)
-- Secrets Manager integration
-- HTTPS reverse proxy
-- Automated vulnerability scanning
+```
 
 ---
 
-# Scalability
+## Reporte generado por IA
 
-The architecture was designed to support future institutional deployments.
+```markdown
+<img width="1094" height="582" alt="image" src="https://github.com/user-attachments/assets/0c6296bb-c422-4127-bd9a-b458d1dec9df" />
 
-Possible extensions include:
-
-- Multi-user support
-- Cloud-native deployment
-- Distributed computing
-- GPU acceleration
-- Kubernetes orchestration
-- Automated retraining
-- CI/CD integration
-- REST API services
-- Microservices architecture
+```
 
 ---
 
-# Testing Strategy
+#  Casos de Uso
 
-The project follows a layered validation strategy.
+SGR-IA puede utilizarse en diferentes escenarios relacionados con el análisis financiero.
 
-## Data Validation
+### Instituciones Financieras
 
-- Missing values
-- Duplicate records
-- Invalid observations
-- Time index consistency
+- Monitoreo de riesgo.
+- Evaluación de portafolios.
+- Elaboración de reportes ejecutivos.
 
----
+### Fondos de Inversión
 
-## Model Validation
+- Pronóstico de volatilidad.
+- Gestión de exposición al riesgo.
+- Optimización de decisiones.
 
-- Log-likelihood optimization
-- Convergence verification
-- Residual diagnostics
-- Volatility persistence
-- Information criteria comparison
+### Universidades
 
----
+- Enseñanza de econometría.
+- Ciencia de Datos.
+- Inteligencia Artificial aplicada a Finanzas.
 
-## Strategy Validation
+### Empresas FinTech
 
-- Walk-forward backtesting
-- Benchmark comparison
-- Drawdown analysis
-- Stability evaluation
-- Performance consistency
+- Automatización del análisis financiero.
+- Sistemas inteligentes de apoyo a decisiones.
+- Desarrollo de plataformas analíticas.
 
 ---
 
-# Performance Characteristics
+# Hoja de Ruta (Roadmap)
 
-| Category | Description |
-|-----------|-------------|
-| Data Processing | Optimized with Pandas and NumPy |
-| Econometric Estimation | Maximum Likelihood Optimization |
-| Visualization | Interactive Plotly Rendering |
-| AI Inference | Amazon Bedrock |
-| Storage | Amazon S3 |
-| Deployment | Docker Ready |
-| Extensibility | High |
-| Maintainability | High |
+Las siguientes funcionalidades están contempladas para futuras versiones del proyecto:
+
+- Integración con mercados en tiempo real.
+- Optimización de portafolios.
+- Simulación de Monte Carlo.
+- Stress Testing.
+- API REST.
+- Autenticación de usuarios.
+- Implementación de CI/CD.
+- Despliegue en Kubernetes.
+- Explicabilidad mediante XAI.
+- Modelos adicionales de series temporales (EGARCH, TGARCH y APARCH).
+
+---
+#  Fundamentos Matemáticos
+
+El núcleo analítico de SGR-IA se basa en modelos econométricos ampliamente utilizados en instituciones financieras para modelar la volatilidad de activos y estimar el riesgo asociado a las inversiones.
+
+El modelo principal implementado es **GARCH (Generalized Autoregressive Conditional Heteroskedasticity)**, el cual permite representar la naturaleza cambiante de la volatilidad en los mercados financieros.
+
+Entre los conceptos matemáticos utilizados se encuentran:
+
+- Modelos GARCH(1,1)
+- Máxima Verosimilitud (Maximum Likelihood Estimation)
+- Distribución Student-t
+- Volatilidad Condicional
+- Persistencia de la Volatilidad
+- Value at Risk (VaR)
+- Conditional Value at Risk (CVaR)
+- Backtesting Walk-Forward
+
+Estos modelos permiten estimar de manera más precisa el comportamiento del riesgo financiero frente a escenarios de incertidumbre.
 
 ---
 
-# Potential Applications
+# Seguridad
 
-Although developed during a Hackathon, the platform has practical applications across multiple sectors.
+El proyecto fue diseñado considerando buenas prácticas de desarrollo seguro.
 
-## Financial Institutions
+Actualmente incorpora:
 
-- Portfolio monitoring
-- Market risk assessment
-- Executive reporting
-- Asset allocation support
+- Manejo de credenciales mediante variables de entorno.
+- Integración segura con Amazon Bedrock.
+- Almacenamiento de información mediante Amazon S3.
+- Arquitectura modular para reducir dependencias entre componentes.
+- Validación de entradas del usuario.
+- Manejo controlado de errores.
+- Separación entre lógica de negocio y presentación.
 
----
+### Mejoras futuras
 
-## Investment Funds
-
-- Volatility forecasting
-- Dynamic exposure management
-- Risk-adjusted investment decisions
-
----
-
-## Universities
-
-- Quantitative finance education
-- Econometrics laboratories
-- AI applications in finance
-- Financial engineering research
+- Autenticación mediante OAuth 2.0.
+- Gestión de usuarios con JWT.
+- Control de acceso basado en roles (RBAC).
+- Integración con AWS Secrets Manager.
+- Registro de auditoría.
+- Cifrado de información sensible.
 
 ---
 
-## FinTech Companies
+# Escalabilidad
 
-- Automated risk analysis
-- AI-powered financial assistants
-- Investment advisory systems
-- Cloud-native financial analytics
+La arquitectura fue diseñada pensando en futuras ampliaciones.
+
+Entre las funcionalidades que pueden incorporarse se encuentran:
+
+- Soporte para múltiples usuarios.
+- Procesamiento distribuido.
+- Arquitectura basada en microservicios.
+- API REST.
+- Integración con más proveedores financieros.
+- Procesamiento en tiempo real.
+- Despliegue en Kubernetes.
+- Automatización mediante CI/CD.
+
+Gracias a su diseño modular, cada componente puede evolucionar de forma independiente sin afectar el funcionamiento general de la plataforma.
 
 ---
 
-# Contributing
+# Estrategia de Validación
 
-Contributions are welcome.
+Para garantizar la confiabilidad de los resultados, se implementan diferentes niveles de validación.
 
-If you would like to improve the project:
+## Validación de Datos
 
-1. Fork the repository.
-2. Create a feature branch.
+- Eliminación de valores faltantes.
+- Verificación de duplicados.
+- Validación de fechas.
+- Consistencia temporal.
+
+---
+
+## Validación del Modelo
+
+- Optimización mediante Máxima Verosimilitud.
+- Verificación de convergencia.
+- Evaluación de persistencia.
+- Comparación mediante AIC y BIC.
+- Diagnóstico de residuos.
+
+---
+
+## Validación de Estrategias
+
+- Backtesting Walk-Forward.
+- Comparación contra Buy & Hold.
+- Evaluación del Drawdown.
+- Medición del rendimiento ajustado al riesgo.
+
+---
+
+#  Rendimiento
+
+La plataforma aprovecha bibliotecas optimizadas para ofrecer un procesamiento eficiente incluso con grandes volúmenes de información financiera.
+
+| Componente | Tecnología |
+|------------|------------|
+| Procesamiento de Datos | Pandas |
+| Cálculo Numérico | NumPy |
+| Modelado Econométrico | ARCH |
+| Estadística | SciPy |
+| Visualización | Plotly |
+| Dashboard | Streamlit |
+| Inteligencia Artificial | Amazon Bedrock |
+| Almacenamiento | Amazon S3 |
+
+---
+
+#  Aplicaciones del Proyecto
+
+SGR-IA puede adaptarse a distintos contextos profesionales y académicos.
+
+### Instituciones Financieras
+
+- Gestión de riesgo.
+- Supervisión de portafolios.
+- Elaboración de reportes ejecutivos.
+- Análisis de volatilidad.
+
+###  Fondos de Inversión
+
+- Optimización de estrategias.
+- Monitoreo de activos.
+- Gestión del riesgo de mercado.
+
+###  Universidades
+
+- Enseñanza de Econometría.
+- Ciencia de Datos.
+- Inteligencia Artificial aplicada a Finanzas.
+- Investigación académica.
+
+###  Empresas FinTech
+
+- Automatización de análisis financieros.
+- Sistemas inteligentes de recomendación.
+- Plataformas analíticas en la nube.
+
+---
+
+#  Contribuciones
+
+Las contribuciones son bienvenidas.
+
+Si deseas colaborar con el proyecto, puedes seguir el siguiente flujo de trabajo:
+
+1. Realizar un **Fork** del repositorio.
+2. Crear una nueva rama.
 
 ```bash
-git checkout -b feature/my-feature
+git checkout -b feature/nueva-funcionalidad
 ```
 
-3. Commit your changes.
+3. Registrar los cambios.
 
 ```bash
-git commit -m "Add new feature"
+git commit -m "Agregar nueva funcionalidad"
 ```
 
-4. Push your branch.
+4. Enviar la rama al repositorio remoto.
 
 ```bash
-git push origin feature/my-feature
+git push origin feature/nueva-funcionalidad
 ```
 
-5. Open a Pull Request.
+5. Crear un **Pull Request** describiendo los cambios realizados.
 
 ---
 
-# Coding Standards
+#  Estándares de Desarrollo
 
-The project follows modern Python development practices.
+Durante el desarrollo del proyecto se siguieron buenas prácticas de ingeniería de software.
 
 - PEP 8
-- Type Hints
-- Modular Design
-- Reusable Components
-- Separation of Concerns
-- Clean Code Principles
-- Documentation-Oriented Development
+- Arquitectura Modular
+- Código Reutilizable
+- Separación de Responsabilidades
+- Documentación Continua
+- Control de Versiones con Git
+- Principios de Clean Code
 
 ---
 
-# License
+# Licencia
 
-This project is distributed under the **MIT License**.
+Este proyecto se distribuye bajo la licencia **MIT**, lo que permite su uso, modificación y distribución siempre que se mantenga el aviso de derechos de autor correspondiente.
 
-You are free to use, modify and distribute the software provided that the original copyright notice and license are included.
-
-For more information, see the `LICENSE` file.
 
 ---
 
-# Authors
+#  Autor
 
-## Project Lead
+## Camilo. MV
+**Data Science & Artificial Intelligence**
 
-**Camxeroth**
+Especializado en:
 
-Data Science & Artificial Intelligence
-
-Specialized in:
-
+- Ciencia de Datos
+- Inteligencia Artificial
 - Machine Learning
-- Financial Risk Modeling
-- Artificial Intelligence
-- Quantitative Finance
-- Data Engineering
+- Econometría
+- Gestión de Riesgo Financiero
+- Modelos Predictivos
 
-GitHub
+GitHub:
 
+```text
+[https://github.com/Camxeroth](https://github.com/Camxeroth)
 ```
-https://github.com/Camxeroth
+
+LinkedIn:
+
+```text
+(https://www.linkedin.com/in/camilo-morocho-ba6286410/)
 ```
 
 ---
 
-# Acknowledgements
+# Agradecimientos
 
-This project was inspired by the intersection of quantitative finance, cloud computing and artificial intelligence.
+Este proyecto fue desarrollado como parte de una Hackathon con el objetivo de demostrar el potencial de la Inteligencia Artificial aplicada a la gestión del riesgo financiero.
 
-Special thanks to the communities and technologies that made this work possible.
+Se agradece el soporte y las herramientas proporcionadas por:
 
 - Python Software Foundation
 - Streamlit
-- NumPy
-- Pandas
-- Plotly
-- SciPy
-- ARCH
-- Amazon Web Services
+- Amazon Web Services (AWS)
 - Amazon Bedrock
+- Pandas
+- NumPy
+- SciPy
+- Plotly
+- ARCH
 - GitHub
 
 ---
 
-# Repository Statistics
+# Referencias
 
-| Property | Value |
-|-----------|--------|
-| Language | Python |
-| Architecture | Modular |
-| AI Integration | Amazon Bedrock |
-| Econometric Model | GARCH(1,1) |
-| Deployment | Docker |
-| Dashboard | Streamlit |
-| Cloud | AWS |
-| Storage | Amazon S3 |
+Algunas de las tecnologías y metodologías empleadas durante el desarrollo incluyen:
+
+- Modelos GARCH para pronóstico de volatilidad.
+- Value at Risk (VaR).
+- Conditional Value at Risk (CVaR).
+- Walk-Forward Backtesting.
+- Inteligencia Artificial Generativa.
+- Amazon Bedrock.
+- Ciencia de Datos aplicada a Finanzas.
 
 ---
 
-# Citation
+# ⭐ Apoya el Proyecto
 
-If you use this repository in academic work, please cite it as follows.
+Si este proyecto te resultó útil o te sirvió como referencia para aprender sobre Ciencia de Datos, Inteligencia Artificial o Gestión de Riesgo Financiero, considera apoyarlo.
 
-```bibtex
-@software{camxeroth_sgr_ia,
-  author       = {Camxeroth},
-  title        = {SGR-IA: AI-Powered Financial Risk Management Platform},
-  year         = {2026},
-  publisher    = {GitHub},
-  url          = {https://github.com/Camxeroth/Proyecto-Hackaton}
-}
-```
+Puedes hacerlo de las siguientes maneras:
+
+- ⭐ Dando una estrella al repositorio.
+- 🍴 Realizando un Fork.
+- 🐞 Reportando errores mediante *Issues*.
+- 💡 Proponiendo nuevas funcionalidades.
+-  Enviando Pull Requests.
+
+Cada contribución ayuda a mejorar el proyecto y permite que más personas puedan utilizarlo como referencia.
 
 ---
 
 <div align="center">
 
-## SGR-IA
+# SGR-IA
 
-**Artificial Intelligence for Quantitative Financial Risk Management**
+### Plataforma Inteligente para la Gestión de Riesgo Financiero
 
-Built with Python, Streamlit, GARCH Models and Amazon Bedrock.
+**Desarrollado con Python, Streamlit, Amazon Bedrock, AWS y modelos econométricos GARCH(1,1).**
 
 ---
 
-*"Transforming financial data into intelligent decisions."*
+### Transformando datos financieros en decisiones inteligentes mediante Inteligencia Artificial.
 
+<br>
+
+** Gracias por visitar este repositorio.**
 
 </div>
