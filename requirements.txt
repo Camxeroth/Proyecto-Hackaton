@@ -1,0 +1,13 @@
+yfinance
+pandas
+numpy
+statsmodels
+scipy
+matplotlib
+seaborn
+streamlit
+boto3
+pyarrow
+fastparquet
+arch
+plotly
