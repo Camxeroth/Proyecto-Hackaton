@@ -3,7 +3,7 @@
 # SGR-IA
 ### Plataforma Inteligente para la Gestión de Riesgo Financiero
 
-<img src="(<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/d0e95821-51b8-4561-994f-21a6d6d10bb8" />)" alt="Banner del Proyecto"/>
+(<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/d0e95821-51b8-4561-994f-21a6d6d10bb8" />)
 
 </p>
 
@@ -105,7 +105,7 @@ El resultado es una plataforma capaz de combinar modelos cuantitativos tradicion
 
 > Video demostrativo de la plataforma.
 
-**▶ Ver demo aquí:** (**COLOCA AQUÍ EL ENLACE DEL VIDEO**)
+**▶ Ver demo aquí: https://youtu.be/rplHGUYKW0Y?si=lJpVBq-zHwMCXIO0
 
 ---
 
@@ -113,7 +113,7 @@ El resultado es una plataforma capaz de combinar modelos cuantitativos tradicion
 
 Puedes probar la aplicación desplegada desde el siguiente enlace:
 
-** Aplicación Web:** (**COLOCA AQUÍ EL ENLACE DEL DESPLIEGUE**)
+(https://sgr-ai.streamlit.app/)
 
 ---
 
