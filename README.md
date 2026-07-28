@@ -3,7 +3,7 @@
 # SGR-IA
 ### Plataforma Inteligente para la Gestión de Riesgo Financiero
 
-(<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/d0e95821-51b8-4561-994f-21a6d6d10bb8" />)
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/d0e95821-51b8-4561-994f-21a6d6d10bb8" />
 
 </p>
 
